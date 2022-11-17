@@ -1,0 +1,24 @@
+.bg-image1 {
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(https://i.ytimg.com/vi/ShyB5h9p7jk/maxresdefault.jpg);
+    height: 100vh;
+    background-repeat:no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.bg-image2 {
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1500w,f_auto,q_auto:best/newscms/2020_06/3213311/ss-200202-super-bowl-24.jpg);
+    height: 100vh;
+    background-repeat:no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.container{text-align:center;
+            color:#fff;}
+.btn {box-shadow: 0px 0px 10px #000;
+        margin-top: 100px;}

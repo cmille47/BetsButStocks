@@ -1,0 +1,14 @@
+h1{color:#fff;}
+body {text-align:center;
+    color:#fff;
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(https://media.wbur.org/wp/2017/02/0206_pats-6-ap.jpg);
+    height: 100%;
+    background-repeat:no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+form {display:inline-block;}
+button {margin-top: 100px;}

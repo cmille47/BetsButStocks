@@ -1,0 +1,11 @@
+.bg-image {
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(https://giantswire.usatoday.com/wp-content/uploads/sites/67/2016/09/gettyimages-138327232.jpg?w=1000&h=600&crop=1);
+    min-height: 100vh;
+    height:100%;
+    background-repeat:no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
