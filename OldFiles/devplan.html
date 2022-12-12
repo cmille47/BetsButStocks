@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>DevPlan</title>
+    </head>
+    <ul>
+        <li><a href="index.html">Home Page</a> </li>
+        <li><a href="project.html">Project Description</a> </li>
+        <li><a href="devplan.html">Development Plan</a> </li>
+    </ul>
+
+    <h2> Database/Software: </h2>
+        <ul>
+        <li>Python
+        (Flask Module)</li>
+        <li>NodeJS
+        (Puppeteer Package)</li>
+        <li>MySql</li>
+		  <li>cron (run automated scripts to retrieve data)</li>
+        </ul>
+        
+        <h2> Data </h2>
+        <p1>
+        We will be getting the majority of our data from oddshark.com. This site will provide the odds data that we will use to make our application functional. Using the Puppeteer Package in JavaScript we have already been able to access relevant data for our project. Other data sources will be the users that sign up, game scores, and transaction history. We will be data scraping the website via javascript and python with an automated bot to scrape the data at different times of the day. This bot would then put the new data into our database. 
+        </p1>
+        
+        <h2> Division of Labor </h2>
+        <p1>
+        Jack Lambert will work with Christian Miller in looking at different websites to automatically get final score data. They will then compare these scores with the contracts/bets to see which user won/lost. Christian will assess payout for the users based on results. Jack will ensure that the bots are not blocked by the websites and devise any workarounds.  
+        </p1>
+        <p1>
+        Connor Ding will work on scraping oddshark for the odds and combining information with Jack and Christian. Connor will also take on user signups. 
+        </p1>
+        <p1>
+        Henry Plante will set up our database and transactions between users. Furthermore, he will be responsible for working with everyone to integrate their data/bots with the database.
+        </p1>
+        <p1>
+        We all plan to work on the front-end website design and work on any advanced functionalities as we progress. 
+        </p1>
+        
+        
+        
+        
+        
+        
+        
+        <h2>Project Milestones </h2>
+        <h3>October 8th</h3>
+        <ul>
+            <li>Proof of Concept for Automated data ingestion using scraping scripts and cron</li>
+            <li>Database created with verified schema</li>
+        </ul>
+
+        <h3>October 15th</h3>
+        <ul>
+            <li>Semi-Functional Website (signups, user tokens, etc.)</li>
+            <li>Connector module to import data into database via automated data ingestion</li>
+        </ul>
+
+        <h3>October 24th</h3>
+        <ul>
+            <li>Functional website</li>
+            <li>Ability to execute transactions</li>
+        </ul>
+
+        <h3>November 2nd</h3>
+        <ul>
+            <li>Initial Demo with active users</li>
+        </ul>
+
+        <h3>November 17th</h3>
+        <ul>
+            <li>Work on advanced functions and continue to update UI of website</li>
+        </ul>
+
+        <h3>December 7th</h3>
+        <ul>
+            <li>Demo Video</li>
+        </ul>
+         
+        <h2> Relations Scheme </h2>
+        <ul>
+            <li>Users(User_ID, name, email, balance, password)  Su = {User_ID -> name, User_ID -> email, User_ID -> balance, User_ID ->password}</li>
+        </ul>
+
+        <ul>
+            <li>Bets(Bet_ID, Game_ID, sport, game_date, type)   Sb = {Bet_ID -> Game_ID, Bet_ID -> sport, Bet_ID -> game_date, Bet_ID -> type}</li>
+        </ul>
+
+        <ul>
+            <li>Moneyline(Bet_ID, game_date, home_odds, away_odds)  Sm = {Bet_ID -> game_date, Bet_ID -> home_odds, Bet_ID -> away_odds}</li>
+        </ul>
+
+        <ul>
+            <li>Spread(Bet_ID, game_date, home_odds, away_odds, line)   Ss = {Bet_ID -> game_date, Bet_ID -> home_odds, Bet_ID -> away_odds, Bet_ID -> line}</li>
+        </ul>
+        
+        <ul>
+            <li>OverUnder(Bet_ID, game_date, home_odds, away_odds, total)   So = {Bet_ID -> game_date, Bet_ID -> home_odds, Bet_ID -> away_odds, Bet_ID -> total}</li>
+        </ul>
+       
+        <ul>
+            <li>Contracts(Contract_ID, Bet_ID, User_ID, payout, bet_choice, listsed, listing_price, game_date, date_purcahsed, paidout) Sc = {Contract_ID -> Bet_ID, Contract_ID -> User_ID, Contract_ID -> payout, Contract_ID -> bet_choice, Contract_ID -> listsed, Contract_ID -> listing_price, Contract_ID -> game_date, Contract_ID -> date_purcahsed, Contract_ID -> paidout}</li>
+        </ul>
+        
+        <ul>
+            <li>Games(Game_ID, home_team, away_team, completed, home_score, away_score, game_date)  Sg = {Game_ID -> home_team, Game_ID -> away_team, Game_ID -> completed, Game_ID -> home_score, Game_ID -> away_score, Game_ID -> game_date}</li>
+        </ul>
+        
+    </body>
+</html>

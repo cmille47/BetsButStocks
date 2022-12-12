@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BetsButStocks</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="index.html">Home Page</a> </li>
+        <li><a href="project.html">Project Description</a> </li>
+        <li><a href="devplan.html">Development Plan</a> </li>
+    </ul>
+    <h1>BetsButStocks</h1>
+    Team Members:
+    <ul>
+        <li>Christian Miller - cmille47@nd.edu</li>
+        <li>Jack Lambert - jlamber4@nd.edu</li>
+        <li>Connor Ding - cding2@nd.edu</li>
+        <li>Henry Plante - hplante@nd.edu</li>
+    </ul>
+
+    <h3>Project Description</h3>
+    <p>
+        As sports betting has become legalized throughout the US, the fan viewership experience has changed forever. Fans are 
+        now more invested and connected with every game in every sport. While many traditional sports book exist, we want to take
+        this investment to the next level.
+    </p>
+
+    <p>
+        With current sports books, you are locked into your bet the second you buy it and offered minimal cashout options from the book. 
+        We wish to change this by creating a sports betting market place where you can buy and sell bets as contracts between users.
+        For example, let's say early this past summer you think the Cavaliers are going to win the NBA Finals this year. You place the bet on this and are locked in at +10000 odds. 
+        2 weeks later the blockbuster trade for all-star Donovan Mitchell occurs. You check the new odds and see the Cavaliers are +2500 to win. 
+        You could now hold onto your original +10000 bet like a traditional sports book, or cashout to someone
+        else willing to buy the odds you listed. 
+    </p>
+
+    <p>
+        We plan to build the marketplace where this would be possible. Here, people can buy/sell bets similar to options in the stock market.
+        Every bettor would have much more flexibility from the buying and selling perspective compared to the merely buy and wait standard.
+    </p>
+
+    <h3>Data</h3>
+        <a href="https://www.oddsshark.com/">oddsshark</a>
+            <ul>
+                <li>
+                    Has numerous odds for any game from available sports books.
+                </li>
+                <li>
+                    Publicly available
+                </li>
+            </ul>
+    
+    <h3>Basic Functions</h3>
+    <ol>
+        <li>
+            <h4>Data Scraping</h4>
+            <p>
+                Will need to be actively getting odds from oddsshark to reflect current betting lines.
+                This data will need to be then stored with each bet contract and historical changes in odds will be recorded.
+            </p>
+        </li>
+        <li>
+            <h4>Trading</h4>
+            <p>
+                Will need a method to securely transfer contracts between users as well as token currency.
+            </p>
+        </li>
+        <li>
+            <h4>Add/Delete Bets/Contracts</h4>
+            <p>
+                Create the contract object and link it with the data scrapping when a bet is placed.
+                After the event occurs, will need to delete the contract from the system after a set time period.
+            </p>
+        </li>
+    </ol>
+    <h3>Advanced Functions</h3>
+    <ol>
+        <li>
+            <h4>Optimized Betting Bot</h4>
+            <p>
+                We will create our own fleet of bots to optimally buy and sell bets based on inputted strategies.
+                This will ensure activity and demonstrate how different strategies can work in this environment.
+            </p>
+        </li>
+        <li>
+            <h4>Link Articles to Contracts</h4>
+            <p>
+                Link articles relevant to each contract posting so any user can see the most recent news.
+                Possibly use AI to cater the best articles based off keywords.
+            </p>
+        </li>
+    </ol>
+	<h3>ER Diagram</h3>
+	<img src="er_diagram.jpg" alt="ER Diagram" style="width:550px;height:350px;">
+</body>
+</html>
