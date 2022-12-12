@@ -12,7 +12,14 @@ if (isset($_SESSION["user_id"])) {
     $connection = new mysqli($servername, $username, $password, $database);
     if ($connection->connect_error) {
       die("Connection failed: " . $connection->connect_error);
-  }
+    }
+    $sql = "SELECT * FROM Users WHERE user_id = {$_SESSION["user_id"]}";
+          
+    $result = $connection->query($sql);
+    
+    $user = $result->fetch_assoc();
+    $balance = $user['balance'];
+    $balance_str = "Current Balance: $" . $balance;
 }
 else {
   Header("Location: index.php");
@@ -40,7 +47,7 @@ else {
                     <a class="nav-link active" aria-current="page" href="nfl.php">Bet NFL</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="listings.php">Bets For Sale</a>
+                    <a class="nav-link active" aria-current="page" href="marketplace.php">Bets For Sale</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="my_bets.php">My Bets</a>
@@ -48,7 +55,15 @@ else {
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="my_account.php">My Account</a>
                   </li>
+                  <?php
+                   if ($_SESSION["user_id"] == 77 or $_SESSION["user_id"] == 134) {
+                    echo "<li class='nav-item'>
+                            <a class='nav-link active' aria-current='page' href='dashboard.php'>Dashboard</a>
+                          </li>";
+                   }
+                  ?>
                 </ul>
+                <h5><?= htmlspecialchars($balance_str) ?></h5>
               </div>
             </div>
           </nav>

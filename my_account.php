@@ -17,6 +17,10 @@ if (isset($_SESSION["user_id"])) {
     $result = $connection->query($sql);
     
     $user = $result->fetch_assoc();
+    $balance = $user['balance'];
+    $balance_str = "Current Balance: $" . $balance;
+} else {
+  $balance_str = "";
 }
 ?>
 
@@ -41,7 +45,7 @@ if (isset($_SESSION["user_id"])) {
                     <a class="nav-link active" aria-current="page" href="nfl.php">Bet NFL</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="listings.php">Bets For Sale</a>
+                    <a class="nav-link active" aria-current="page" href="marketplace.php">Bets For Sale</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="my_bets.php">My Bets</a>
@@ -49,7 +53,15 @@ if (isset($_SESSION["user_id"])) {
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="my_account.php">My Account</a>
                   </li>
+                  <?php
+                   if ($_SESSION["user_id"] == 77 or $_SESSION["user_id"] == 134) {
+                    echo "<li class='nav-item'>
+                            <a class='nav-link active' aria-current='page' href='dashboard.php'>Dashboard</a>
+                          </li>";
+                   }
+                  ?>
                 </ul>
+                <h5><?= htmlspecialchars($balance_str) ?></h5>
               </div>
             </div>
           </nav>
@@ -57,6 +69,9 @@ if (isset($_SESSION["user_id"])) {
     <?php if (isset($user)): ?>
       <div class="bg-image2">
         <div class="container">
+
+
+
             <h1><br><br>Hello, <?= htmlspecialchars($user["name"]) ?></h1>
             <br>
             <h3> 
@@ -64,9 +79,18 @@ if (isset($_SESSION["user_id"])) {
             </h3>
             <br>
             <button type="button" class="btn btn-light"><a href="logout.php"><h5>Log out</h5></a></button>
+
+
+            
         </div>
       </div>
         
+
+
+
+
+
+
     <?php else: ?>
       <div class="bg-image1">
         <div class="container">

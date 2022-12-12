@@ -79,7 +79,6 @@ for x in mycursor:
     elif bet_type == "ML":
         if bet_choice == "Away":
             cur_odds = ml_away_odds
-            print(ml_away_odds)
         else:
             cur_odds = ml_home_odds
     elif bet_type == "OU":
@@ -106,9 +105,6 @@ for x in mycursor:
     elif bet_type == "ML":
         if bet_choice == "Away":
             games[str(game_id) + "mla"] = games[str(game_id) + "mla"] + liab
-            print("iupdated")
-            print(games[str(game_id) + "mla"])
-            print(liab)
         else:
             games[str(game_id) + "mlh"] = games[str(game_id) + "mlh"] + liab
     elif bet_type == "OU":
@@ -128,14 +124,19 @@ for i in game_ids:
     max_liab += max(max(games[i + "sa"], games[i + "sh"]), games[i + "st"])
     max_liab += max(max(games[i + "ouu"], games[i + "ouo"]), games[i + "out"])
     min_liab += min(games[i + "mla"], games[i + "mlh"])
-    print(games[i + "mla"])
-    print(games[i + "mlh"])
     min_liab += min(min(games[i + "sa"], games[i + "sh"]), games[i + "st"])
     min_liab += min(min(games[i + "ouu"], games[i + "ouo"]), games[i + "out"])
 
+book_total = 0
+sql = "select balance from Users where user_id = %s"
+vals = [77]
+mycursor.execute(sql, vals)
+for x in mycursor:
+    book_total = x[0]
+
 # insert into database
-sql = "insert into Liabilities values (%s, %s, %s, %s)"
-vals = (datetime.now(), out_rev, min_liab, max_liab)
+sql = "insert into Liabilities values (%s, %s, %s, %s, %s)"
+vals = (datetime.now(), out_rev, min_liab, max_liab, book_total)
 
 mycursor.execute(sql, vals)
 

@@ -42,7 +42,7 @@ else {
                     <a class="nav-link active" aria-current="page" href="listings.php">Bets For Sale</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="show_user_bets.php">My Bets</a>
+                    <a class="nav-link active" aria-current="page" href="my_bets.php">My Bets</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="my_account.php">My Account</a>

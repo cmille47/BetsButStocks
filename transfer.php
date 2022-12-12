@@ -44,11 +44,11 @@ if (isset($_SESSION["user_id"])) {
 
             //header("Location: show_user_bets.php");
             mysqli_commit($connection);
-            echo "<script type=\"text/javascript\"> alert('Bet successfully purchased!'); window.location.href='show_user_bets.php';</script>";
+            echo "<script type=\"text/javascript\"> alert('Bet successfully purchased!'); window.location.href='my_bets.php';</script>";
             exit;
         }
         else {
-            echo "<script type=\"text/javascript\"> alert('Bet not processed! Withdrawal amount exceeded!'); window.location.href='listings.php';</script>";
+            echo "<script type=\"text/javascript\"> alert('Bet not processed! Withdrawal amount exceeded!'); window.location.href='marketplace.php';</script>";
             mysqli_rollbakc($connection);
         }
     } catch (error $e) {

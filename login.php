@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       die("Connection failed: " . $connection->connect_error);
   }
 
-    $sql = sprintf("SELECT * FROM Users WHERE email = '%s'", $connection->real_escape_string($_POST["email"]));
+    $sql = sprintf("SELECT * FROM Users WHERE email = '%s' AND password = '%s'", $connection->real_escape_string($_POST["email"]), $connection->real_escape_string($_POST["password"]));
     
     $result = $connection->query($sql);
     
